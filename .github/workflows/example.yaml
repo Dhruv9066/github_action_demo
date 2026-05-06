@@ -1,18 +1,19 @@
 name: first_workflow
-on: push # on: [push,pull]
+on: push
 jobs:
-    first_job:
-        runs-on: ubuntu-22.04
-        steps:
-
-            - name: first step
-              run:  ls
-            
-            - name: checkout stage
-              uses: actions/checkout@v6
-
-            - name: listing the clone files
-              run:  ls
-
-            - name: read the file
-              run: cat README.md
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checking out the code
+      uses: actions/checkout@v6
+    - name: listing the code
+      run: | 
+          ls
+          echo "hello from gihub action" > a.txt
+          cat a.txt
+    
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: I am second job
+      run: ls
