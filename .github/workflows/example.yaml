@@ -4,8 +4,14 @@ jobs:
     first_job:
         runs-on: ubuntu-22.04
         steps:
-            
+
             - name: first step
+              run:  ls
+            
+            - name: checkout stage
+              uses: actions/checkout@v6
+
+            - name: listing the clone files
               run:  ls
 
             - name: read the file
